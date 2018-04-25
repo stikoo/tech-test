@@ -9,7 +9,7 @@
 ## Getting started
 
 * `git clone` https://github.com/Jet2UX/tech-test.git
-* `brew install yarn` (Use `npm i` if preferred)
+* In the terminal`brew install yarn` (Use `npm i` if preferred)
 * `yarn`
 * `npm run build` (In a separate terminal tab)
 * `npm run watch` (In a separate terminal tab)
