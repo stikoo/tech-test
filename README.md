@@ -9,10 +9,11 @@
 ## Getting started
 
 * `git clone https://github.com/Jet2UX/tech-test.git`
-* `brew install yarn` (Use `npm i` if preferred)
+* `brew install yarn` (Use `npm i` if preferred)`
 * `yarn`
-* `npm run build` (In a separate terminal tab)
-* `npm run watch` (In a separate terminal tab)
+* `npm run build` (In a separate terminal tab)`
+* `npm run watch` (In a separate terminal tab)`
+* `Once these commands have run the browser should load http://localhost:3000/`
 
 
 ## Development
