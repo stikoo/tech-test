@@ -1,0 +1,236 @@
+/*------------------------------------*\
+    COLOUR SCHEME TO BE USED IN MAPPINGS
+\*------------------------------------*/
+
+// Blues
+
+$owls-blue: #2262aa;
+$coventry-blue: #ddeefb;
+$wigan-blue: #3d8ede;
+$portsmouth-blue: #2b6fb1;
+
+$southend-blue: #203240;
+$huddersfield-blue: #347cf2;
+
+// Oranges
+$wolves-orange: #fdb900;
+$cambridge-orange: #e5ae1b;
+$bantams-orange: #f7a100;
+
+// Greens
+$yeovil-green: #098c09;
+$wolfsburg-green: #dcf1c0;
+$persian-green: #00AF84;
+
+// Grey
+$concrete-grey: #818d9b;
+$united-grey: #555f69;
+
+$charcoal-grey: #444;
+$smoke-grey: #ccc;
+$andy-grey: #f9f5f5;
+$pavement-grey: #979797;
+$eddie-grey: #f2f2f2;
+$macy-grey: #818181;
+$white: #fff;
+$black: #000;
+
+
+// Reds
+
+$liverpool-red: #bf0000;
+$barnsley-red: #cd0000;
+$bournemouth-red: #ed1c24;
+$lions-red: #ee3123;
+$juventus-pink: #ffeceb;
+
+
+// Purples
+
+$fiorentina-purple: #4d43a9;
+$toulouse-purple: #2d2576;
+
+
+/*------------------------------------*\
+    Jet2 Brand Colours
+\*------------------------------------*/
+
+$jet2-red: #ee3123;
+$jet2-yellow: #fff100;
+$family-main: #f28c00;
+$family-sub: #f7b800;
+$family-light: #fcd47b;
+$family-alt: #5bbbeb;
+$adult-main: #009b9f;
+$adult-sub: #63c1c6;
+$adult-light: #a4d7da;
+$luxury-main: #1f104b;
+$luxury-sub: #8f8b90;
+$luxury-light: #d2ced0;
+$ontour-green: #62c2c9;
+$ontour-purple: #1f104b;
+$ontour-orange: #f28c00;
+$ontour-black: $black;
+$experience-main: #8bbf46;
+$experience-light: #e0edce;
+$indulgent: #1d191a;
+$rfci: #2e71af;
+
+
+
+
+//
+//
+// THESE ARE LEGACY COLOURS USED IN THE VILLAS PROJECT
+// WE SHOULDN'T BE USING THESE ANY MORE AND GRADUALLY REPLACING
+// OR ADDING THEM TO THE MAIN COLOURS ABOVE
+//
+//
+
+
+
+
+/*------------------------------------*\
+    Jet2 Misc Colours
+\*------------------------------------*/
+
+$bodyColor: #232323;
+
+$pale-grey: #e9eef5;
+$pale-grey-two: #eef3f9;
+$pinkish-grey-two: #c0c0c0;
+$pinkish-grey-three: #cccccc;
+$silver: #c0c3c6;
+$greyish-white: #f4f4f4;
+
+$cerulean: #068dbf;
+$turquoise-blue: #00adbb;
+$dodger-blue: #347cf2;
+$light-blue-grey: #d8e1ec;
+$light-blue-grey-two: #b3d9ec;
+$twilight-blue: #084295;
+$windows-blue: #3770b2;
+$gumbo: #7D9EA2;
+$dark-grey-blue: #272462;
+$seashell: #f1f0f0;
+$mine-shaft: #232323;
+$dove-gray: #666666;
+$silver-chalice: #a1a1a1;
+$dusty-grey: #9a9a9a;
+
+$lipstick: #d9262e;
+$tomato: #ee3123;
+
+$sunflower-yellow: #ffde02;
+$squash: #f6af23;
+$darkSquash: #e18f1d;
+
+
+$soft-green: #5dc163;
+
+
+/*------------------------------------*\
+    Jet2 Holiday Brand Colours
+\*------------------------------------*/
+
+
+$holidays-primary: #4290db;
+$holidays-secondary: #d1020e;
+
+$holidays-primary-shadow: #2f70af;
+$holidays-cold-blue: #BEEEFF;
+$holidays-tertiary: #3272ad;
+$holidays-background-blue: #1f8adc;
+$holidays-dark-blue: #1E3146;
+$holidays-nav-blue: #235e98;
+$holidays-grey: #E7E7E7;
+$holidays-orange-light: #f9b700;
+$holidays-orange: #f28c00;
+
+$transparent-black: rgba(0, 0, 0, 0.1);
+$transparent-white: rgba(255, 255, 255, 0.1);
+
+/*------------------------------------*\
+    Jet2 City Breaks colours
+\*------------------------------------*/
+
+$citybreaks-primary: #191050;
+$citybreaks-secondary: #ed1c24;
+$citybreaks-dark: #ae010b;
+$citybreaks-grey: #6d6f72;
+$citybreaks-nav: #e5ae1b;
+$citybreaks-nav-shadow: #b78b16;
+
+/*------------------------------------*\
+    Jet2 Villas colours
+\*------------------------------------*/
+
+$villas-primary: #272462;
+$villas-secondary: #068DBF;
+
+
+/*-#GREYS----------------------------*/
+
+$leeds-grey:        #f8f8f8;
+$edinburgh-grey:    #f2f2f2;
+$birmingham-grey:   #e7e7e7;
+$newcastle-grey:    #e3e3e3;
+$midlands-grey:     #dddee0;
+$status-grey:       #cccccc;
+$bradford-grey:     #c0c0c0;
+$manchester-grey:   #acadb2;
+$madrid-grey:       #979797;
+$barcelona-grey:    #757575;
+$turin-grey:        #626262;
+$krakow-grey:       #5c5c5c;
+$paris-grey:        #3d3d3d;
+$black:             #000;
+$keyline-grey: 		#d1d3d6;
+$bg-grey: 			#e9ebee;
+
+/*-#BLUES----------------------------*/
+$malaga-blue: #347cf2;
+$naples-blue: #dbe7fd;
+$paris-blue: #203240;
+$paris-blue-transparent: rgba(32, 50, 64, 0.9);
+
+/*-#GREENS----------------------------*/
+$budapest-green: #098c09;
+
+/*-#OTHER---------------------------*/
+
+$holland-orange: #F38E01;
+$valencia-yellow: #fbb800;
+
+
+
+/*------------------------------------*\
+    Jet2 Brand Colours
+\*------------------------------------*/
+
+$jet2-red: #ee3123;
+$jet2-yellow: #fff100;
+$family-main: #f28c00;
+$family-sub: #f7b800;
+$family-light: #fcd47b;
+$family-alt: #5bbbeb;
+$adult-main: #009b9f;
+$adult-sub: #63c1c6;
+$adult-light: #a4d7da;
+$luxury-main: #1f104b;
+$luxury-sub: #8f8b90;
+$luxury-light: #d2ced0;
+$ontour-green: #62c2c9;
+$ontour-purple: #1f104b;
+$ontour-orange: #f28c00;
+$ontour-black: $black;
+$experience-main: #8bbf46;
+$experience-light: #e0edce;
+$indulgent: #1d191a;
+
+
+/*------------------------------------*\
+    Social Media Colours
+\*------------------------------------*/
+
+$facebook-primary : #2b6fb1;

@@ -1,0 +1,76 @@
+﻿/*------------------------------------*\
+   Utility Mixins
+\*------------------------------------*/
+
+@mixin loading-bubble($size, $color) {
+    background-color: $color;
+    border-radius: 50%;
+    animation: preloader-three-bounce 1.4s ease-in-out 0s infinite both;
+    height: $size;
+    width: $size;
+}
+
+@mixin button($color, $shadow, $text-color: $white) {
+    $loader-size: 15px;
+	$dark-color: darken($color, 10%);
+	background-color: $color;
+    color: $text-color;
+
+	@if $shadow == true {
+		border-bottom: 4px solid $dark-color;
+	}
+
+    .no-touchevents &:hover {
+        background-color: $dark-color;
+    }
+
+
+    /* Loading state (can be used on ANY button) */
+    &[data-loading="true"] {
+        position: relative;
+
+        span {
+            display: block;
+            text-indent: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                margin-top: -($loader-size/2);
+                height: $loader-size;
+                width: $loader-size;
+                @include loading-bubble($loader-size, $text-color);
+                animation-delay: -.16s;
+
+                left: 50%;
+                margin-left: -($loader-size/2);
+            }
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            margin-top: -($loader-size/2);
+            height: $loader-size;
+            width: $loader-size;
+            @include loading-bubble($loader-size, $text-color);
+        }
+
+        &:before {
+            animation-delay: -.32s;
+            left: 50%;
+            margin-left: $loader-size;
+        }
+
+        &:after {
+            right: 50%;
+            margin-right: $loader-size;
+        }
+    }
+
+}

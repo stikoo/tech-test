@@ -1,0 +1,19 @@
+
+/* Set a theme */
+$theme: 'city';
+
+/* Import all settings, mixins and grid */
+@import "susy";
+@import 'settings/colors';
+@import "global";
+@import "mappings/mappings-city";
+@import "core";
+
+
+/* Import all Components for this theme */
+@import '_components';
+
+/* Margins based on theme mappings */
+@import 'settings/margins';
+@import 'settings/visibility';
+

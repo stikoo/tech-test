@@ -1,0 +1,32 @@
+
+/* Set a theme */
+$theme: 'beach';
+
+/* Import all settings, mixins and grid */
+@import "susy";
+@import 'settings/colors';
+@import "global";
+@import "mappings/mappings-beach";
+@import "core";
+
+
+/* Import all Components for this theme */
+@import '_components';
+
+/* Margins based on theme mappings */
+@import 'settings/margins';
+@import 'settings/visibility';
+
+/* Import crossed themed components */
+.city-theme {
+    $theme: 'city';
+    @import 'mappings/mappings-city';
+    // @import 'Content/Header/DesktopHeader/sass/desktopHeader.scss';
+}
+
+.villas-theme {
+    $theme: 'villas';
+    @import 'mappings/mappings-villas';
+    // @import 'Content/Header/DesktopHeader/sass/desktopHeader.scss';
+}
+

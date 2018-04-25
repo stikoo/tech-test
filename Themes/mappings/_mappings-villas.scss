@@ -1,0 +1,50 @@
+﻿/*---------------------------------------------------------------------------*\
+    #MAPPINGS CITY FILE
+
+	These are specific variables set up for beach theme of the site.
+	More of the global styles are defined in global.scss
+
+\*---------------------------------------------------------------------------*/
+
+
+
+/*-#BUTTONS----------------------------*/
+
+$color-primary-button: $bantams-orange;
+$color-secondary-button: $fiorentina-purple;
+
+
+
+
+/*-#COLOURS----------------------------*/
+
+$color-primary: $fiorentina-purple;
+$color-secondary: $toulouse-purple;
+
+
+
+
+/*-#BORDER RADIUS----------------------------*/
+
+$border-radius: 0;
+
+
+
+/*-#HEADING FONT----------------------------*/
+
+$heading-font-bold: $helvetica-bold;
+$heading-font-bold-weight: normal;
+
+$heading-font-light: $helvetica-neue;
+$heading-font-light-weight: 300;
+
+$heading-font: $helvetica-med;
+$heading-font-weight: 500;
+
+
+/*- FONT WEIGHTS----------------------------*/
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;

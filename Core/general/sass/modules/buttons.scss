@@ -1,0 +1,161 @@
+.bttn {
+    border: 0;
+    color: $white;
+    display: inline-block;
+    text-align: center;
+    padding: ($third-unit * 2) $half-unit;
+    @include subheading-font();
+    font-size: 20px;
+    line-height: 20px;
+    transition: background-color .2s linear;
+    cursor:pointer;
+    border-radius: $border-radius;
+
+
+    &.is-disabled {
+        opacity: 0.2;
+        cursor: auto;
+    }
+
+    // Presentation
+    &--global {
+
+        &-primary {
+            @include button($color-border-primary, false);
+        }
+
+        &-secondary {
+            @include button($color-selected, false);
+        }
+
+        &-tertiary {
+            @include button($color-tertiary, false);
+        }
+
+        &-confirm {
+            @include button($color-confirmation, false);
+        }
+
+        &-primary-outline {
+            border: 2px solid $color-selected;
+            border-color: $color-selected;
+            @include button($white, false, $color-selected);
+        }
+
+        &-secondary-outline {
+            border: 2px solid $color-border-secondary;
+            border-color: $color-border-secondary;
+            @include button($white, false, $color-border-secondary);
+        }
+
+        &-outline-dark {
+            border: 1px solid $color-tertiary;
+            border-radius: $border-radius;
+            @include button($white, false, $color-tertiary);
+        }
+
+        &-outline-inverted {
+            border: 2px solid $white;
+            border-radius: $border-radius;
+            @include button(transparent, false, $white);
+        }
+
+        &-inverted {
+            @include button($white, false, $color-selected);
+        }
+    }
+
+
+    &--primary {
+        @include button($color-primary-button, true);
+    }
+
+    &--secondary {
+        @include button($color-secondary-button, false);
+    }
+
+    &--outline {
+        border: 2px solid $color-primary;
+        border-color: $color-primary;
+        @include button($white, false, $color-primary);
+    }
+
+    &--outline__alternative {
+        border: 1px solid $midlands-grey;
+        @include button($white, false, $color-primary);
+    }
+
+    &--inverted {
+        @include button($white, false, $color-primary);
+    }
+
+    // Display and sizing
+    &--full-width {
+        width: 100%;
+    }
+
+    &--large {
+        font-size: 22px;
+    }
+
+    &--small {
+        padding: $quarter-unit + ($quarter-unit / 2);
+        font-size: 16px;
+    }
+
+    &--tiny {
+        padding: $quarter-unit;
+        font-size: 14px;
+    }
+
+    &--outline-inverted {
+        border: 1px solid $white;
+    }
+
+    &--primary-outline {
+        color: $color-text-link;
+        background-color: $white;
+        border: 1px solid;
+    }
+
+    &--right,
+    &--left {
+        background-position: center center;
+        background-repeat: no-repeat;
+        padding: $half-unit + $quarter-unit $half-unit + $quarter-unit;
+        background-size: 40%;
+    }
+
+    &--left {
+        background-image: svg-load('chevron-left.svg', fill=$color-tertiary, stroke-width=0, width=16, height=16);
+    }
+
+    &--right {
+        background-image: svg-load('chevron-right.svg', fill=$color-tertiary, stroke-width=0, width=16, height=16);
+    }
+
+    &--up {
+        background-image: svg-load('chevron-up.svg', fill=$color-tertiary, stroke-width=0, width=16, height=16);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    &--down {
+        background-image: svg-load('chevron-down.svg', fill=$color-tertiary, stroke-width=0, width=16, height=16);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+
+    /* Icon styling inside button */
+    &__icon {
+        .bttn--icon-left & {
+            float: left;
+        }
+
+        .bttn--icon-right & {
+            float: right;
+        }
+    }
+
+}

@@ -1,0 +1,49 @@
+/*---------------------------------------------------------------------------*\
+    #MAPPINGS CITY FILE
+
+	These are specific variables set up for beach theme of the site.
+	More of the global styles are defined in global.scss
+
+\*---------------------------------------------------------------------------*/
+
+
+
+/*-#BUTTONS----------------------------*/
+
+$color-primary-button: $bournemouth-red;
+$color-secondary-button: $cambridge-orange;
+
+
+
+
+/*-#COLOURS----------------------------*/
+
+$color-primary: $concrete-grey;
+$color-secondary: $united-grey;
+
+
+/*-#BORDER RADIUS----------------------------*/
+
+$border-radius: 0;
+
+
+
+/*-#HEADING FONT----------------------------*/
+
+$heading-font: $montserrat;
+$heading-font-weight: normal;
+
+$heading-font-light: $montserrat-light;
+$heading-font-light-weight: 500;
+
+$heading-font-bold: $montserrat;
+$heading-font-bold-weight: 500;
+
+
+
+/*- FONT WEIGHTS----------------------------*/
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;

@@ -1,0 +1,74 @@
+/*------------------------------------*\
+    Font Mixins
+\*------------------------------------*/
+
+@mixin opensans-regular() {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+}
+
+@mixin opensans-semibold() {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 600;
+}
+
+@mixin opensans-bold() {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 700;
+}
+
+@mixin helvetica-neue() {
+    font-family: 'helvetica-neue-lt-std', Arial, sans-serif;
+    font-weight: normal;
+}
+
+@mixin helvetica-med-light() {
+    font-family: 'helvetica-med-light', Arial, sans-serif;
+    font-weight: normal;
+}
+
+@mixin pt-sans() {
+    font-family: 'pt-sans', Arial, sans-serif;
+    font-weight: normal;
+}
+
+@mixin montserrat-regular() {
+    font-family: 'montserrat-regular', Arial, sans-serif;
+    font-weight: normal;
+}
+
+@mixin heading-font() {
+    font-family: $heading-font;
+    font-weight: $heading-font-weight;
+}
+
+@mixin heading-font-bold() {
+    font-family: $heading-font-bold;
+    font-weight: $heading-font-bold-weight;
+}
+
+@mixin heading-font-light() {
+    font-family: $heading-font-light;
+    font-weight: $heading-font-light-weight;
+}
+
+@mixin subheading-font() {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: normal;
+}
+
+@mixin font-weight-light() {
+    font-weight: $font-weight-light;
+}
+
+@mixin font-weight-regular() {
+    font-weight: $font-weight-regular;
+}
+
+@mixin font-weight-semibold() {
+    font-weight: $font-weight-semibold;
+}
+
+@mixin font-weight-bold() {
+    font-weight: $font-weight-bold;
+}

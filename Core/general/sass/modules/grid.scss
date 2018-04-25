@@ -1,0 +1,244 @@
+.grid {
+    $block: ".grid";
+    position: relative;
+    &:before,
+    &:after {
+        clear: both;
+        content: '';
+        display: block;
+    }
+    &.no-gutter {
+        margin-left: 0;
+        margin-right: 0;
+        > #{$block}__item {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &--half-gutter {
+        > #{$block}__item {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    &--inline {
+        > #{$block}__item {
+            float: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    &--inline-bottom {
+        > #{$block}__item {
+            vertical-align: bottom;
+        }
+    }
+
+    // flex helpers
+
+    &--flex {
+        font-size: 0;
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        &:before,
+        &:after {
+            content: normal;
+        }
+        > #{$block}__item {
+            font-size: 1rem;
+            float: none;
+            display: inline-block;
+
+            .flexbox & {
+                display: flex;
+            }
+
+            vertical-align: top;
+        }
+    }
+    &--centered {
+        align-items: center;
+    }
+}
+
+@mixin grid__item {
+    width: 100%;
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    &.no-gutter {
+        padding: 0;
+    }
+    // flex helpers
+
+    &--flex {
+        display: flex;
+        align-items: stretch;
+        & > * {
+            flex: 1;
+            max-width: 100%;
+        }
+    }
+
+    &--flex-column {
+        flex-direction: column;
+    }
+
+    &--flex-end {
+        align-items: flex-end;
+    }
+}
+
+.grid__item {
+    @include grid__item();
+
+    &--centered {
+        text-align: center;
+    }
+}
+
+@mixin grid($containerColumnsCount, $gutter, $grid-sizes) {
+
+    //.grid logic :-)
+
+    $maxColWidth: 100 / $containerColumnsCount;
+
+    // loops
+
+    @for $i from 1 through $containerColumnsCount {
+        .grid--#{$containerColumnsCount} > .grid__item--span-#{$i} {
+            width: $maxColWidth * $i + 0%;
+        }
+    }
+
+    @for $i from 1 through $containerColumnsCount {
+        .grid--#{$containerColumnsCount} > .grid__item--col-#{$i} {
+            margin-right: -100%;
+            left: $maxColWidth * ($i - 1) + 0%;
+        }
+    }
+
+    @each $size, $value in $grid-sizes {
+        $tweak: 0;
+        @if $size != tablet {
+            $tweak: 0;
+        }
+        $cumputed: $value + $tweak;
+        @media only screen and (min-width: $cumputed) {
+            @for $column from 1 through $containerColumnsCount {
+                .grid--#{$containerColumnsCount} > .grid__item--span-#{$size}-#{$column} {
+                    width: $maxColWidth * $column + 0%;
+                }
+                .grid--#{$containerColumnsCount} > .grid__item--col-#{$size}-#{$column} {
+                    margin-right: -100%;
+                    left: $maxColWidth * ($column - 1) + 0%;
+                }
+            }
+        }
+    }
+
+    @each $size, $value in $grid-sizes {
+        @media only screen and (min-width: $value + 0.1) {
+            .grid--#{$containerColumnsCount} > .hide--col-#{$size} {
+                display: none;
+            }
+        }
+    }
+
+    // specific.grid
+
+    .grid {
+        $block: ".grid";
+        &--#{$containerColumnsCount} {
+            margin-left: -$gutter / 2;
+            margin-right: -$gutter / 2;
+            > #{$block}__item {
+                padding-left: $gutter / 2;
+                padding-right: $gutter / 2;
+            }
+        }
+
+        &--half-gutter {
+            margin-left: -$grid-half-gutter / 2;
+            margin-right: -$grid-half-gutter / 2;
+            > #{$block}__item {
+                padding-left: $grid-half-gutter  / 2;
+                padding-right: $grid-half-gutter  / 2;
+            }
+        }
+
+        &--wide-gutter {
+            margin-left: -$grid-wide-gutter / 2;
+            margin-right: -$grid-wide-gutter / 2;
+            > #{$block}__item {
+                padding-left: $grid-wide-gutter  / 2;
+                padding-right: $grid-wide-gutter  / 2;
+            }
+        }
+    }
+}
+
+// column helper // (col, width, grid columns)
+
+@mixin column ($width, $offset: null, $gutter: $grid-gutter, $grid-columns: $grid-columns) {
+    .grid--#{$grid-columns} & {
+        $maxColWidth: 100 / $grid-columns;
+        @include grid__item();
+        width: $maxColWidth * $width + 0%;
+        margin-right: 0;
+        left: auto;
+        padding-left: $gutter / 2;
+        padding-right: $gutter / 2;
+        @if $offset != null {
+            margin-right: -100%;
+            left: $maxColWidth * ($offset - 1) + 0%;
+        }
+    }
+}
+
+// create grid // (columns, gutter)
+
+@include grid($grid-columns, $grid-gutter, $grid-sizes);
+
+// hide rules
+
+.grid {
+    > .mobile-hide {
+        @include media('<=tablet') {
+            display: none;
+        }
+    }
+
+    > .align-right {
+        text-align: right;
+    }
+
+    > .mobile-align-center {
+        @include media('<tablet') {
+            text-align: center;
+        }
+    }
+
+    > .lap-hide {
+        @include media('>tablet', '<desktop') {
+            display: none;
+        }
+    }
+
+    > .tablet-hide {
+        @include media('>tablet') {
+            display: none;
+        }
+    }
+
+    > .desktop-hide {
+        @include media('>desktop') {
+            display: none;
+        }
+    }
+}
+

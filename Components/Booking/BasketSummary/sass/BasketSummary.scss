@@ -1,0 +1,211 @@
+/*---------------------------------------------------------------------------*\
+    $BASKET SUMMARY
+
+    Component to allow the user to view all details of their holiday in one
+    place, along with a holiday total price.
+
+/*---------------------------------------------------------------------------*/
+
+
+
+/*-#LAYOUT----------------------------*/
+
+.basket-summary {
+    $block: &;
+
+    &__container {
+        @include cf();
+        padding: $base-unit 0;
+
+        @include media('>=tablet') {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__breakdown,
+    &__totals {
+        background-color: $white;
+        border-radius: $border-radius;
+        padding: $base-unit $half-unit;
+
+        @include media('<tablet') {
+            &:not(:first-child) {
+                margin-top: $half-unit;
+            }
+        }
+    }
+
+    /*-------------------------------*\
+        $BREAKDOWN TOTALS
+    /*-------------------------------*/
+
+    &__totals {
+        @include media('>=tablet') {
+            @include span(4 of 10);
+            @include last();
+        }
+
+        @include media('>desktop') {
+            @include span(3 of 10);
+            @include last();
+        }
+    }
+
+
+    &__totals-block { /* Totals blocks contain pricing and we need to separate into blocks for the flex layout to work as required, with spacing */
+        &:not(:last-child) {
+            padding-bottom: $base-unit;
+        }
+    }
+
+
+    /*-------------------------------*\
+        $BASKET BREAKDOWN
+    /*-------------------------------*/
+
+    &__breakdown { /* [1] */
+        @include media('>=tablet') {
+            @include span(6 of 10);
+            padding: $base-unit;
+        }
+
+        @include media('>desktop') {
+            @include span(7 of 10);
+        }
+    }
+
+        &__breakdown-title {
+            border-bottom: 1px dashed $pale-grey;
+            color: $color-text;
+            padding-bottom: $half-unit;
+            margin-bottom: 18px;
+            @include font-weight-semibold();
+        }
+
+        &__breakdown-subtitle {
+            @include font-weight-semibold();
+        }
+
+        &__breakdown-details {
+            margin-bottom: $half-unit;
+        }
+
+        &__breakdown-content {
+            clear: both;
+
+            // We need to add spacing above this element if we're in the trade version
+            #{$block}__trade-essentials + & {
+                padding-top: $base-unit;
+            }
+
+            @include media('>=tablet') {
+                display: none;
+
+                &--visible {
+                    display: block;
+                }
+            }
+        }
+
+
+    &__included-btn {
+        @include media('<tablet') {
+            display: none;
+        }
+        float: right;
+    }
+
+    /*------------------------------*\
+        $PRICING
+    /*------------------------------*/
+    &__price-row { /* [2] */
+        display: table;
+        margin-bottom: $quarter-unit;
+        width: 100%;
+
+        &--discount {
+            border-top: 1px dashed $pale-grey;
+            color: $color-discount;
+            padding-top: $quarter-unit;
+            margin-top: $quarter-unit;
+            @include font-weight-bold();
+        }
+
+        &--secure {
+            color: $white;
+            background-color: $color-tertiary;
+            margin-left: - $half-unit;
+            width: calc(100% + #{$base-unit});
+            margin-bottom: 0;
+        }
+    }
+
+        &__price-item,
+        &__price-value {
+
+            vertical-align: bottom;
+
+            #{$block}__price-row--secure & {
+                padding: $half-unit;
+            }
+        }
+
+        &__price-item {
+
+        }
+
+        &__price-value {
+            font-weight: 600;
+
+
+
+            &--total {
+                font-size: 24px;
+                line-height: 24px;
+            }
+        }
+
+        &__price-icon {
+            color: $color-tertiary;
+        }
+
+    &__essentials {
+        display: none;
+        padding: $half-unit;
+        background-color: $color-content-background;
+        border-radius: $border-radius;
+
+        &:not(:last-child) {
+            margin-bottom: $quarter-unit;
+        }
+    }
+
+    &__essentials-icon,
+    &__included-icon {
+        margin-left: $quarter-unit / 2;
+    }
+
+    &__included-icon {
+        &--rotated {
+            transform: rotate(180deg);
+        }
+    }
+
+
+    /*-------------------------------*\
+        $CONTINUE BTN
+
+        This should be treated as a separate component,
+        this element acts as a container for that
+        component only
+    /*-------------------------------*/
+    &__continue {
+        margin: $half-unit 0;
+
+    }
+
+    &__supplement-text {
+        text-align: center;
+    }
+}

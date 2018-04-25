@@ -1,0 +1,377 @@
+html {
+    height: 100%;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
+    margin: 0;
+
+    &.is-blocked {
+        position: fixed;
+        width: 100%;
+        overflow-y: scroll;
+        @include media('>=tablet') {
+            overflow-y: hidden;
+        }
+    }
+
+    &.is-loading {
+        &,
+        * {
+            cursor: progress;
+        }
+    }
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.no-margin-bottom{
+  > div{
+    margin-bottom: 0
+  }
+}
+
+.container {
+
+    @include media('>=tablet') {
+        margin: 0 auto;
+        max-width: 1400px;
+        //max-width: $grid-container; //need to revert this
+    }
+
+    position: relative;
+}
+
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.section {
+    padding: $half-unit;
+
+    @include media('>=tablet') {
+        padding: $base-unit;
+    }
+}
+
+.logo {
+    max-width: 390px;
+    width: 100%;
+}
+
+[role='tabpanel'][aria-hidden='true'],
+.grid__item[aria-hidden='true']{
+    display: none;
+}
+
+.over-hidden {
+    overflow: hidden;
+    height: 100%;
+}
+
+/*------------------------------------*\
+	#CLEARFIX
+\*------------------------------------*/
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.clearfix {
+	@extend %clearfix;
+}
+
+.is-mobile {
+	.page-wrapper {
+		margin-top: 80px;
+        width: 100%;
+        display: block;
+        position: relative;
+	}
+}
+
+ [v-cloak] {
+    display: none;
+}
+
+
+
+/*------------------------------------*\
+	#PADDINGS
+\*------------------------------------*/
+
+.padding {
+    padding: $base-unit;
+
+    &--top {
+        padding-top: $base-unit;
+    }
+    &--right {
+        padding-right: $base-unit;
+    }
+    &--bottom {
+        padding-bottom: $base-unit;
+    }
+    &--left {
+        padding-left: $base-unit;
+    }
+    &--half {
+        padding: $half-unit;
+    }
+    &--top-half {
+        padding-top: $half-unit;
+    }
+    &--right-half {
+        padding-right: $half-unit;
+    }
+    &--bottom-half {
+        padding-bottom: $half-unit;
+    }
+    &--left-half {
+        padding-left: $half-unit;
+    }
+    &--none {
+        padding: 0 !important;
+    }
+    &--zero-bottom {
+        padding-bottom: 0;
+    }
+    &--zero-top {
+        padding-top: 0;
+    }
+    &--zero-left {
+        padding-left: 0;
+    }
+    &--zero-right {
+        padding-right: 0;
+    }
+}
+
+
+/*------------------------------------*\
+	#MARGINS
+\*------------------------------------*/
+
+.margin {
+    margin: $base-unit;
+
+    &--top {
+        margin-top: $base-unit;
+    }
+    &--right {
+        margin-right: $base-unit;
+    }
+    &--bottom {
+        margin-bottom: $base-unit;
+    }
+    &--left {
+        margin-left: $base-unit;
+    }
+    &--half {
+        margin: $half-unit;
+    }
+    &--top-half {
+        margin-top: $half-unit;
+    }
+    &--right-half {
+        margin-right: $half-unit;
+    }
+    &--bottom-half {
+        margin-bottom: $half-unit;
+    }
+    &--left-half {
+        margin-left: $half-unit;
+    }
+    &--none {
+        margin: 0 !important;
+    }
+    &--zero-bottom {
+        margin-bottom: 0;
+    }
+    &--zero-top {
+        margin-top: 0;
+    }
+    &--zero-left {
+        margin-left: 0;
+    }
+    &--zero-right {
+        margin-right: 0;
+    }
+
+}
+
+
+/*------------------------------------*\
+	#BACKGROUND COLOURS
+\*------------------------------------*/
+
+.background {
+    &--white {
+        background-color: $white;
+    }
+    &--light-grey {
+        background-color: $edinburgh-grey;
+    }
+    &--light-blue-grey {
+        background-color: $light-blue-grey;
+    }
+    &--blue {
+        background-color: $holidays-primary;
+    }
+    &--check-availability,
+    &--light-blue {
+        background-color: $holidays-cold-blue;
+    }
+    &--dark-blue {
+        background-color: $holidays-dark-blue;
+    }
+    &--orange {
+        background-color: $holidays-orange;
+    }
+    &--family-main {
+        background-color: $family-main;
+    }
+    &--family-sub {
+        background-color: $family-sub;
+    }
+    &--family-light {
+        background-color: $family-light;
+    }
+    &--family-alt {
+        background-color: $family-alt;
+    }
+    &--adult-main {
+        background-color: $adult-main;
+    }
+    &--adult-sub {
+        background-color: $adult-sub;
+    }
+    &--adult-light {
+        background-color: $adult-light;
+    }
+    &--luxury-main {
+        background-color: $luxury-main;
+    }
+    &--luxury-sub {
+        background-color: $luxury-sub;
+    }
+    &--luxury-light {
+        background-color: $luxury-light;
+    }
+    &--ontour-green {
+        background-color: $ontour-green;
+    }
+    &--ontour-purple {
+        background-color: $ontour-purple;
+    }
+    &--ontour-orange {
+        background-color: $ontour-orange;
+    }
+    &--ontour-black {
+        background-color: $ontour-black;
+    }
+    &--experience-main {
+        background-color: $experience-main;
+    }
+    &--experience-light {
+        background-color: $experience-light;
+    }
+    &--indulgent {
+        background-color: $indulgent;
+    }
+}
+
+
+.site-content {
+    background-color: $white;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-is-open .site-content {
+
+    @include media('<tablet') {
+        transform: translate3d(0, 0, 0);
+        transition: transform .3s;
+        &--menu-open {
+            transform: translate3d(-($off-canvas-width),0,0);
+        }
+    }
+
+}
+
+.site-body {
+    width: 100%;
+    max-width: $grid-container;
+    margin: 0 auto;
+
+    padding: 0 $half-unit $half-unit;
+
+    @include media('>=tablet') {
+        padding: $base-unit;
+    }
+
+
+}
+
+.row {
+    margin: 0 0 $half-unit 0;
+    @include media('>=tablet') {
+        margin: 0 0 $base-unit 0;
+    }
+}
+
+.split-wrapper {
+
+    &__left {
+        width: 100%;
+
+        /*@include media('>=desktop') {
+            display: block;
+            @include span(7 of 10);
+        }*/
+    }
+
+    &__right {
+        display: none;
+        /*@include media('>=desktop') {
+            display: block;
+            @include span(3 of 10);
+            @include last();
+        }*/
+    }
+
+}
+
+.divider {
+    @include media('>tablet') {
+        border-bottom: 1px solid $smoke-grey;
+    }
+}
+
+// Wraps around everything so the header doesn't spill off the page on iPadschr
+.outer {
+    /*overflow-x: hidden;*/
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]> <html class="no-touch lt-ie10 lt-ie9 nojs" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="no-touch lt-ie10 ie9 nojs" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="nojs" lang="en">
+<!--<![endif]-->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="/dist/core.bundle.css" rel="stylesheet" />
+    <?php
+        $theme = (isset($_GET['theme'])) ? $_GET['theme'] : 'villas' ;
+    ?><link href="/dist/<?php echo $theme; ?>.bundle.css" rel="stylesheet" title="<?php echo $theme; ?>"/>
+    <link href="/dist/dev.css" rel="stylesheet" />
+</head>
+<body>
+<?php include 'utils.php' ?>
+<?php include (__DIR__ . '/../Components/Content/HeaderDetails/HeaderDetails.php') ?>
+<!-- <div class="wrapper"></div> -->

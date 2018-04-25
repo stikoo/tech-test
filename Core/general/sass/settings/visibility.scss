@@ -1,0 +1,17 @@
+.hide-small {
+	@include media('<tablet') {
+		display: none;
+	}
+}
+
+.hide-small-medium {
+	@include media('<desktop') {
+		display: none;
+	}
+}
+
+.hide-large {
+	@include media('>=tablet') {
+		display: none;
+	}
+}

@@ -1,0 +1,67 @@
+﻿/*------------------------------------*\
+    Jet2 Brand Colours
+\*------------------------------------*/
+
+$brands:
+    ('family', $family-main)
+    ('adults', $adult-main)
+    ('lux', $luxury-main)
+    ('ontour', $ontour-green)
+    ('experience', $experience-main)
+    ('indulgent', $indulgent)
+    ('rfci', $rfci)
+    ('villas', $toulouse-purple)
+    ('poi-label', $paris-blue-transparent)    
+    ('city', $united-grey);
+
+
+@each $brand-name, $brand-color in $brands {
+
+    .brand--#{$brand-name} {
+        background-color: #{$brand-color};
+
+        &,
+        h2 {
+            @if ($brand-name == 'ontour') {
+                color: $ontour-purple;
+            }
+            @else {
+                color: $white;
+            }
+        }
+
+
+    }
+
+    .brand--light-panel--#{$brand-name} {
+            background-color: rgba($brand-color, 0.1) !important;
+    }
+
+    .brand-border--#{$brand-name} {
+
+        &,
+        &.brand-border--#{$brand-name} {
+            border-color: $brand-color;
+        }
+    }
+
+}
+
+.brand-text {
+
+    &--flights {
+        color: $jet2-red;
+    }
+
+    &--holidays {
+        color: $wigan-blue;
+    }
+
+    &--city {
+        color: $concrete-grey
+    }
+
+    &--villas {
+        color: $fiorentina-purple;
+    }
+}

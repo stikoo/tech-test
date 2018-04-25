@@ -1,0 +1,171 @@
+/*------------------------------------*\
+  #SUSY COLUMNS
+\*------------------------------------*/
+
+// Main column mixin
+// It returns a modifier &--2, &--3, &--4 etc...
+// Adds Susy span mixin and appends the last mixin if needed
+@mixin columns($col: (2, 3, 4, 6, 8, 10, 9, 12)) {
+    @each $new-column in $col {
+        &--#{$new-column} {
+            @include span($new-column);
+            @if($new-column < 7) {
+                // Check if the column is wider than half of the total grid width
+                &:nth-child(#{12/$new-column}n) {
+                    @include last;
+                }
+                &:nth-of-type(#{12/$new-column}n+1) {
+                    // Clear each row of elements to avoid grid stacking if elements are different height
+                    clear: both;
+                }
+            }
+        }
+    }
+}
+
+
+/*------------------------------------*\
+  #GRID SUSY BASE
+\*------------------------------------*/
+
+.grid-layout {
+    // Standard layout
+    @include container(); // Container automatically adds clear to the grid row
+    margin: 0 auto;
+    // &:after { // Clear grid row on both sides
+    //   content: "";
+    //   display: table;
+    //   clear: both;
+    // }
+    > * {
+        // Default grid uses a standard gutter size at the bottom of the column
+        margin-bottom: gutter();
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &--fluid {
+        // Goes 100% wide
+        max-width: 100%;
+    }
+    &--no-margins {
+        // Clears bottom margins of the columns
+        > * {
+            margin-bottom: 0;
+        }
+    }
+    &--flex {
+
+      @include media('>=tablet') {
+        display: flex;
+        flex-wrap: wrap;
+        > * {
+            display: flex;
+            flex-direction: column;
+        }
+      }
+    }
+    .last {
+        // Add this class to the last item if it needs celaring
+        @include last;
+    }
+}
+
+@include media('<tablet') {
+  .small {
+    @include columns();
+  }
+}
+
+@include media('>=tablet','<=desktop') {
+  .medium {
+    @include columns();
+  }
+}
+
+@include media('>desktop') {
+  .large {
+      @include columns();
+  }
+}
+
+
+/*------------------------------------*\
+  #SUSY NO GUTTERS
+\*------------------------------------*/
+
+@include with-layout($susy-no-gutters) {
+  .grid-layout--no-gutters {
+    > * {
+        margin-right: 0;
+    }
+
+    @include media('<tablet') {
+      .small {
+        @include columns();
+      }
+    }
+
+    @include media('>=tablet','<=desktop') {
+      .medium {
+        @include columns();
+      }
+    }
+
+    @include media('>desktop') {
+      .large {
+          @include columns();
+      }
+    }
+  }
+}
+
+
+/*------------------------------------*\
+  #CONFIRMATION PAGE SPECIFIC GRID
+\*------------------------------------*/
+
+.confirmation-layout {
+    @include media('>=tablet') {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    &__sidebar {
+        @include media('>=tablet') {
+            min-height: 0;
+            min-width: 290px;
+            margin-right: gutter();
+            width: span(3);
+
+        }
+    }
+
+    &__content {
+        @include media('>=tablet') {
+            min-width: 0;
+            min-height: 0;
+            flex-grow: 0;
+            flex-shrink: 1;
+            width: 100%; // width 100% + flex-grow forces this element to fill any remaining space left by the sidebar
+        }
+    }
+
+}
+
+.no-flexbox {
+    .confirmation-layout {
+        @include cf();
+
+        &__sidebar {
+            float: left;
+            min-width: 0;
+        }
+
+        &__content {
+            float: right;
+            width: span(9);
+        }
+    }
+}

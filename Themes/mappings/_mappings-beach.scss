@@ -1,0 +1,52 @@
+/*---------------------------------------------------------------------------*\
+    #MAPPINGS BEACH FILE
+
+	These are specific variables set up for beach theme of the site.
+	More of the global styles are defined in global.scss
+
+\*---------------------------------------------------------------------------*/
+
+
+
+/*-#BUTTONS----------------------------*/
+
+$color-primary-button: $wolves-orange;
+$color-secondary-button: $portsmouth-blue;
+
+
+
+
+/*-#COLOURS----------------------------*/
+
+$color-primary: $wigan-blue;
+$color-secondary: $portsmouth-blue;
+
+
+
+
+/*-#BORDER RADIUS----------------------------*/
+
+$border-radius: 4px;
+
+
+
+/*-#HEADING FONT----------------------------*/
+
+$heading-font-bold: $helvetica-bold;
+$heading-font-bold-weight: normal;
+
+$heading-font-light: $helvetica-neue;
+$heading-font-light-weight: 300;
+
+$heading-font: $helvetica-med;
+$heading-font-weight: 500;
+
+
+
+
+/*- FONT WEIGHTS----------------------------*/
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;

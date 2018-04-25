@@ -1,0 +1,23 @@
+.component-margin-bottom {
+	margin-bottom: $half-unit;
+
+	@include media('>=tablet') {
+		margin-bottom: $one-and-half-unit;
+
+		&--small {
+			margin-bottom: $base-unit;
+		}
+	}
+
+}
+.component-margin-top {
+	margin-top: $half-unit;
+
+	@include media('>=tablet') {
+		margin-top: $one-and-half-unit;
+
+		&--small {
+			margin-top: $base-unit;
+		}
+	}
+}

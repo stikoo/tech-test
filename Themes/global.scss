@@ -1,0 +1,107 @@
+/*---------------------------------------------------------------------------*\
+    #GLOBAL STYLES
+
+	These styles are applied to every theme, they can be overwritten on a per
+	theme basis.
+
+\*---------------------------------------------------------------------------*/
+
+
+
+/*-#STATE COLOURS----------------------------*/
+
+$color-selected: $huddersfield-blue;
+$color-selected-light: $coventry-blue;
+
+$color-confirmation: $yeovil-green;
+$color-confirmation-light: $wolfsburg-green;
+
+$color-error: $liverpool-red;
+$color-error-light: $juventus-pink;
+
+$color-tertiary: $southend-blue;
+
+$color-discount: $liverpool-red;
+
+$color-fcp: $bantams-orange; //Not generic, informed this orange will never be used for anything else but "free child place"
+
+$color-rfci: $wigan-blue; // For RFCI specific theming
+
+/*-#TEXT COLOURS----------------------------*/
+
+$color-text: $charcoal-grey;
+$color-text-link: $huddersfield-blue;
+
+$color-navigation-link: $macy-grey;
+$color-text-alt: $madrid-grey;
+
+$color-text-link-alt: $barcelona-grey;
+
+
+/*-#BACKGROUNDS----------------------------*/
+
+$color-content-background: $andy-grey;
+$color-panel: $eddie-grey;
+
+
+/*-#BORDERS--------------------------------*/
+
+$color-border-primary: $smoke-grey;
+$color-border-secondary: $pavement-grey;
+$color-border-tertiary: $midlands-grey;
+
+
+/*-#BASE UNIT------------------------------*/
+
+$base-unit: 24px;
+
+$three-quarters-unit: $base-unit * 0.75; // 18px
+$half-unit: $base-unit / 2; // 12px
+$third-unit: $base-unit / 3; // 8px
+$quarter-unit: $base-unit / 4; // 6px
+
+$one-and-half-unit: $base-unit * 1.5; // 36px
+$double-unit: $base-unit * 2; // 48px
+$triple-unit: $base-unit * 3; // 72px
+$quad-unit: $base-unit * 4; // 96px
+
+
+/*-#FONT SIZE----------------------------------*/
+
+$font-size-base: 14;
+
+
+/*-#FONTS----------------------------------*/
+
+$helvetica: Helvetica, Arial, sans-serif;
+$arial: Arial, Helvetica, sans-serif;
+$helvetica-bold: 'helvetica-neue-bold', sans-serif;
+$helvetica-med: 'helvetica-neue-medium', Arial, sans-serif;
+$helvetica-neue: 'helvetica-neue-light', sans-serif;
+$montserrat: 'montserrat-regular', sans-serif;
+$montserrat-light: 'montserrat-light', sans-serif;
+$open-sans: 'Open Sans', Arial, sans-serif;
+
+$body-font: $open-sans;
+
+
+/*-#FORMS----------------------------------*/
+
+$form-spacing: 10px;
+
+
+/*-#MARGINS AND PADDING---------------------*/
+
+// Dont use these, they've been added due to legacy Villas stuff
+$margin-size: 20px;
+$padding-size: 20px;
+
+
+/*-#ROUNDAL---------------------*/
+
+$color-roundal: $lions-red;
+
+
+/*-#COMPONENT VARIABLES---------------------*/
+
+$off-canvas-width: 80vw;

@@ -1,0 +1,18 @@
+{
+  "minify": true,
+  "options": [
+    "html5shiv",
+    "setClasses",
+    "prefixed",
+    "mq",
+    "addTest"
+  ],
+  "feature-detects": [
+    "css/transforms3d",
+    "css/flexboxlegacy",
+    "css/flexbox",
+    "touchevents",
+    "css/appearance",
+    "css/animations"
+    ]
+}

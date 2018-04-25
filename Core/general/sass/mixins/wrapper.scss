@@ -1,0 +1,47 @@
+﻿@mixin wrapper {
+	width: $max-site-width;
+	margin: 0 auto;
+	padding: 0 $half-unit;
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+
+	@include media('>=tablet') {
+		padding: 0 30px;
+	}
+}
+
+@mixin fluid-wrapper($color:transparent) {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	background-color: $color;
+
+	& *,
+	& *::after,
+	& *::before {
+		box-sizing: border-box;
+	}
+
+	@include media('>=tablet') {
+		padding: 0 30px;
+		max-width: $max-site-width;
+	}
+
+	.lt-ie9 & {
+		padding: 0 30px;
+		max-width: $max-site-width;
+	}
+}
+
+
+@mixin mobile-container {
+	width: 100%;
+	// max-width: 640px;
+	position: relative;
+	display: block;
+	margin: 0 auto;
+}

@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    Helper / Utility Mixins
+\*------------------------------------*/
+
+/* Remove list styling */
+@mixin reset-list() {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Clearfix */
+@mixin cf() {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+/* Hide text */
+@mixin hide-text {
+	font-size: 0;
+	line-height: 0;
+	color: transparent;
+	overflow: hidden;
+}
+
+/* Placeholder : TODO Usage note? */
+@mixin placeholder {
+	// scss-lint:disable VendorPrefix
+	&::-webkit-input-placeholder {@content}
+	&:-moz-placeholder           {@content}
+	&::-moz-placeholder          {@content}
+	&:-ms-input-placeholder      {@content}
+}
+
+/* Removes button styling */
+@mixin reset-button() {
+	border: none;
+	border-radius: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+/* Webkit custom scroll bar theming */
+@mixin custom-scroll() {
+	&::-webkit-scrollbar-track { }
+	&::-webkit-scrollbar {
+		width: 8px;
+		background-color: $white;
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 0;
+		background-color: #c5c5c5;
+	}
+}
+
+@mixin vertically-align($position: relative) {
+    position: $position;
+    top: 50%;
+		-ms-transform: translateY(-50%);
+    transform: perspective(1px) translateY(-50%);
+}
+
+/* Required for theming */
+@mixin border-radius($br) {
+	@if ( $br > 0 ) {
+		border-radius: $br;
+	}
+}
+
+@mixin border($direction: right, $width: 1px, $style: solid, $color: #dddee0, $none: false) {
+  border-#{$direction}: $width $style $color;
+  @if $direction == all { border: $width $style $color; }
+  @if $none { border: none; }
+}
