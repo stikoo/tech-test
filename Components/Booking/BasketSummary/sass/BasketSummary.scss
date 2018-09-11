@@ -138,6 +138,10 @@
                 display: flex;
                 flex-wrap: wrap;
                 margin: $half-unit 0 $quarter-unit;
+
+                .no-flexbox & {
+                    @include cf();
+                }
             }
         }
 
@@ -146,11 +150,23 @@
 
             @include media('>desktop') {
                 flex: 999 0 50%;
+
+                .no-flexbox & {
+                    float: left;
+                    width: 50%;
+                }
             }
 
             @include media('>large-desktop') {
                 flex: 999 0 33.333%;
+
+                .no-flexbox & {
+                    float: left;
+                    width: 33%;
+                }
             }
+
+
         }
 
 
@@ -170,6 +186,10 @@
         margin-bottom: $quarter-unit;
         width: 100%;
 
+        .no-flexbox & {
+            @include cf();
+        }
+
         &--discount {
             border-top: 1px dashed $pale-grey;
             color: $color-discount;
@@ -182,6 +202,7 @@
             color: $white;
             background-color: $color-tertiary;
             margin-left: - $half-unit;
+            margin-right: - $half-unit;
             width: calc(100% + #{$base-unit});
             margin-bottom: 0;
         }
@@ -197,13 +218,18 @@
         }
 
         &__price-item {
-
+            .no-flexbox & {
+                float: left;
+            }
         }
 
         &__price-value {
+            text-align: right;
             font-weight: 600;
 
-
+            .no-flexbox & {
+                float: right;
+            }
 
             &--total {
                 font-size: 24px;
